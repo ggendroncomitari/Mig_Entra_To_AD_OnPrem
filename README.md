@@ -57,3 +57,11 @@ Joining the device to the local domain
 Rebooting the machine if needed
 
 Simply deploy and execute the package on each workstation using WAPT.
+
+## ⚠️ Important Notes
+
+Make sure to test all scripts and the WAPT package in a lab environment before deploying to production.
+
+Azure AD unjoin is not officially supported via PowerShell. This script attempts to unregister the device but results may vary depending on your environment and policies.
+
+Use secure methods to store and retrieve credentials (avoid hardcoding passwords in production environments).
