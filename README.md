@@ -27,7 +27,7 @@ This project provides scripts and automation tools to migrate Windows workstatio
 Use `Export-EntraID-Users.ps1` to export all enabled users with useful properties (e.g., name, email, job title, department, etc.) to a CSV file.
 
 ```powershell
-.\Export-EntraID-Users.ps1
+.\Extract_Users.ps1
 ```
 
 ## 👥 Import Users into Active Directory
@@ -41,7 +41,7 @@ Your target OU (Organizational Unit)
 The default password for new users
 
 ```powershell
-.\Import-Users-To-AD.ps1
+.\Import_From_Extract.ps1
 ```
 
 ## 💻 Migrate Workstations from Entra ID to AD
