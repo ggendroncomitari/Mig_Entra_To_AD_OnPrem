@@ -6,9 +6,8 @@ This project provides scripts and automation tools to migrate Windows workstatio
 
 - Export user information from Entra ID
 - Create matching user accounts in Active Directory
-- Disconnect workstations from Entra ID (#TODO)
-- Join workstations to the local Active Directory domain (#TODO)
-- Automate the process using PowerShell or Python (#TODO)
+- Migrate workstations from Entra ID to on-prem AD using the WAPT package
+- Automate the process using PowerShell and WAPT
 
 ## 🧰 Prerequisites
 
@@ -20,7 +19,12 @@ This project provides scripts and automation tools to migrate Windows workstatio
 
 ### For Workstation Migration
 
-- Admin (SYSTEM) privileges on the target machine
-- Network access to the local domain controller
-- A domain account with permissions to join computers to the domain
-- PowerShell execution policy must allow script execution
+- WAPT package `comi-leave_Entra_to_OnPrem_0-1_PROD.wapt` (included in this repository)
+- Set `comi-leave_Entra_to_OnPrem_0-1_PROD.wapt` as dependances to this computer using WAPT.
+
+## 📤 Export Users from Entra ID
+
+Use `Export-EntraID-Users.ps1` to export all enabled users with useful properties (e.g., name, email, job title, department, etc.) to a CSV file.
+
+```powershell
+.\Export-EntraID-Users.ps1
