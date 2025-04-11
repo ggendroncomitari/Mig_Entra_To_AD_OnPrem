@@ -28,3 +28,32 @@ Use `Export-EntraID-Users.ps1` to export all enabled users with useful propertie
 
 ```powershell
 .\Export-EntraID-Users.ps1
+```
+
+## 👥 Import Users into Active Directory
+
+Use Import-Users-To-AD.ps1 to create users in your on-prem Active Directory from the exported CSV file.
+
+Update the script with:
+
+Your target OU (Organizational Unit)
+
+The default password for new users
+
+```powershell
+.\Import-Users-To-AD.ps1
+```
+
+## 💻 Migrate Workstations from Entra ID to AD
+
+To migrate workstations from Entra ID to your on-prem Active Directory, use the WAPT package included in this repository: comi-leave_Entra_to_OnPrem_0-1_PROD.wapt.
+
+This WAPT package automates the migration process, including:
+
+Unregistering the device from Entra ID
+
+Joining the device to the local domain
+
+Rebooting the machine if needed
+
+Simply deploy and execute the package on each workstation using WAPT.
