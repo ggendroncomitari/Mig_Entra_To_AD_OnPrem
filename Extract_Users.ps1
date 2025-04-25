@@ -18,22 +18,13 @@ $export = $users | Select-Object `
     StreetAddress,
     UserType
 
-# Export vers fichier CSV
 $export | Export-Csv -Path ".\entra_users.csv" -NoTypeInformation -Encoding UTF8
-
-Write-Host "✅ Export here : entra_users.csv"
-
-
-# Get Groups
 $allGroups = Get-MgGroup -All
-
 $results = @()
-
 foreach ($group in $allGroups) {
     $groupId = $group.Id
     $groupName = $group.DisplayName
 
-    # Get Groups Members
     $members = Get-MgGroupMember -GroupId $groupId -All
 
     foreach ($member in $members) {
@@ -49,8 +40,7 @@ foreach ($group in $allGroups) {
     }
 }
 
-# CSV Export
 $results | Export-Csv -Path "groups_and_members.csv" -NoTypeInformation -Encoding UTF8
 
-Write-Host "✅ Export here : groups_and_members.csv"
+Write-Host "Export here : groups_and_members.csv"
 
