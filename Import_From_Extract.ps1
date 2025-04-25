@@ -1,11 +1,7 @@
 Import-Module ActiveDirectory
-
 $csvPath = ".\entra_users.csv"
-
 $ou = "OU=Migration,DC=mycompagny,DC=lan"
-
 $default_pasword = "myDefaultPassword!"
-
 Import-Csv -Path $csvPath | ForEach-Object {
     $sam = $_.UserPrincipalName.Split("@")[0]
 
@@ -28,5 +24,5 @@ Import-Csv -Path $csvPath | ForEach-Object {
                -Enabled $true `
                -ChangePasswordAtLogon $true
 
-    Write-Host "✅ Utilisateur created :" $_.DisplayName
+    Write-Host "User created :" $_.DisplayName
 }
