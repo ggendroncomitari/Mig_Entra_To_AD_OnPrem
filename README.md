@@ -68,6 +68,4 @@ Use secure methods to store and retrieve credentials (avoid hardcoding passwords
 
 ## TO DO
 
-Add Groups extract and import to Active Directory.
-
 Add python compatibility for Samba Active Directory Support.
